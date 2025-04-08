@@ -1,0 +1,78 @@
+:root {
+  --main-font: "proxima-nova";
+  --secondary-font: "Helvetica Neue", Helvetica, sans serif;
+}
+
+h1 {
+  font-family: var(--main-font);
+  font-size: 28px !important;
+}
+
+h2 {
+  font-family: var(--main-font);
+  font-size: 20px !important;
+  color: grey;
+}
+
+.nav-link {
+  font-family: var(--secondary-font);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 40px;
+}
+
+.photo-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: tranform 0.5s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay-content {
+  color: #fff;
+}
+
+.overlay-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.overlay-action {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+.photo-container:hover img {
+  transform: scale(1.05);
+}
+
+.photo-container:hover .overlay-text {
+  opacity: 1;
+}
