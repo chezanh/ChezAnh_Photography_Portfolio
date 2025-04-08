@@ -5,7 +5,7 @@
 
 h1 {
   font-family: var(--main-font);
-  font-size: 28px !important;
+  font-size: 24px !important;
 }
 
 h2 {
@@ -18,16 +18,18 @@ h2 {
   font-family: var(--secondary-font);
 }
 
+/*gallery grid*/
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding: 40px;
 }
 
 .photo-container {
   position: relative;
   overflow: hidden;
+  width: 100%;
   aspect-ratio: 3/4;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -37,6 +39,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: tranform 0.5s ease;
 }
 
@@ -75,4 +78,20 @@ h2 {
 
 .photo-container:hover .overlay-text {
   opacity: 1;
+}
+
+/* Mobile: let the images appear in squares (1:1)*/
+
+@media (max-width: 640px) {
+  .photo-container {
+    aspect-ratio: 1/1;
+  }
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 16px !important;
+  }
 }
