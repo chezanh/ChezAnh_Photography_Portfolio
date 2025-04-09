@@ -3,6 +3,13 @@
   --secondary-font: "Helvetica Neue", Helvetica, sans serif;
 }
 
+/*styling of the navbar*/
+
+.navbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
 h1 {
   font-family: var(--main-font);
   font-size: 24px !important;
